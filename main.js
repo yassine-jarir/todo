@@ -57,15 +57,15 @@ function addElementToTheDom(task) {
           choix= ""
     }
     let tr = document.createElement("tr");
-    tr.className = `${choix} odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700`;
+    tr.className = ` odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700`;
     tr.setAttribute("data-id", task.id);
 
 
     tr.innerHTML = `
-        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">${task.title}</td>
-        <td class="px-6 py-4">${task.date}</td>
-        <td class="px-6 py-4">${task.description}</td>
-        <td class="px-6 py-4">${task.etat}</td>
+        <td class="${choix} px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">${task.title}</td>
+        <td class="${choix} px-6 py-4">${task.date}</td>
+        <td class="${choix} px-6 py-4">${task.description}</td>
+        <td class="${choix} px-6 py-4">${task.etat}</td>
         <td class="font-medium text-blue-600 dark:text-blue-500 hover:underline px-6 py-4 edit cursor-pointer">edit</td>
         <td class="delete cursor-pointer font-medium text-red-600 dark:text-blue-500 hover:underline px-6 py-4">delete</td>
     `;

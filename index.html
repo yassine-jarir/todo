@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn JavaScript</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            width: 500px;
+            margin: 20px auto;
+        }
+        .form {
+            background-color: #eee;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            flex: 1;
+        }
+        .input:focus {
+            outline: none;
+        }
+        .add {
+            border: none;
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .tasks {
+            background-color: #eee;
+            margin-top: 20px;
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .tasks .task {
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+        .tasks .task:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        .tasks .task:hover {
+            background-color: #f7f7f7;
+        }
+        .tasks .task.done {
+            opacity: 0.5;
+        }
+        .tasks .task span {
+            font-weight: bold;
+            font-size: 10px;
+            background-color: red;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-[#f6f6f6f6]">
+    <div class="container">
+        <form style="border-radius: 25px;" class="form flex flex-row justify-around">
+            <div>
+                <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titre</label>
+                <input aria-required="true" required type="text" id="title" class="inputTitre bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+            </div>
+
+            <div>
+                <label for="date" class=" block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
+                <input aria-required="true" required type="date" id="date" class="inputDate bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            </div>
+
+            <div>
+                <label for="description" class=" block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                <input aria-required="true" required type="text" id="description" class="inputDescription input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description" required />
+            </div>
+
+            <div>
+                <label for="status" class=" block mb-2 text-sm font-medium text-gray-900 dark:text-white">Etat</label>
+                <select aria-required="true" required id="status" required  class="inputEtat input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  name="" id="">
+                    <option value="" disabled selected>Status</option>
+                    <option value="To Do">To Do </option>
+                    <option value="in progress">in progress</option>
+                    <option value="completed">completed</option>
+                </select>
+            </div>
+
+            <input  type="submit" class="add bg-[#005ce6]" value="Add Task" />
+        </form>
+    </div>
+    <div style="width: 90%;margin: auto;" class=" m-auto  relative overflow-x-auto shadow-md sm:rounded-lg"></div>
+
+        <table style="width: 90%;    margin: auto; " class="w-[90%]  w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Titre</th>
+                    <th scope="col" class="px-6 py-3">Date</th>
+                    <th scope="col" class="px-6 py-3">Description</th>
+                    <th scope="col" class="px-6 py-3">Etat</th>
+                    <th scope="col" class="px-6 py-3">Action</th>
+ 
+                </tr>
+            </thead>
+            <tbody class="tasks">
+ 
+ 
+            </tbody>
+        </table>
+        <div class="notfound">
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
